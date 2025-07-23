@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Professional Portfolio</title>
+
+  <!-- Font Awesome for Contact Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Particles Background Container */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background: linear-gradient(to right, #eaf2f8, #d6eaf8);
+    }
+
+    /* Body and General Styles */
+    body {
+      color: #2c3e50;
+      line-height: 1.6;
+      perspective: 1000px;
+      animation: fadeInBody 1.5s ease-in;
+      min-height: 100vh;
+      /* background is handled by particles */
+    }
+
+    @keyframes fadeInBody {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      animation: fadeInDown 1s ease forwards;
+      position: relative;
+      z-index: 1;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #1abc9c;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    section {
+      margin-bottom: 50px;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+    }
+
+    /* Glassmorphism Box */
+    .box {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 15px;
+      transition: transform 0.6s, box-shadow 0.4s;
+      transform-style: preserve-3d;
+    }
+
+    .box:hover {
+      transform: rotate3d(1, 1, 0, 8deg) scale(1.02);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    a.cv-button {
+      display: inline-block;
+      background: #3498db;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+
+    a.cv-button:hover {
+      background: #1abc9c;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      animation: fadeInUp 1.2s ease forwards;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Contact Icons Styling */
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.1rem;
+    }
+
+    .contact-item i {
+      color: #3498db;
+      min-width: 20px;
+    }
+
+    /* Photo Section Styles */
+    .photo-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
+
+    .photo-box img {
+      border-radius: 70%;
+      max-width: 150px;
+      width: 200px%;
+      height: auto;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .photo-box img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
+
+  <header>
+    <h1>TEJAS SHELKE</h1>
+    <p>Web Developer</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#photo">Photo</a>
+      <a href="#cv">CV</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#certification">Certification</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="box">
+        <p>
+          I’m a passionate developer skilled in frontend and backend
+          technologies including HTML, CSS, JavaScript . I love
+          solving problems and building digital products that make a difference.
+        </p>
+      </div>
+    </section>
+
+    <section id="photo">
+      <h2>My Photo</h2>
+      <div class="box photo-box">
+        <img
+          src="profile.jpg"
+          alt="Shelke Tejas"
+        />
+      </div>
+    </section>
+
+    <section id="cv">
+      <h2>CV</h2>
+      <div class="box">
+        <p>
+          Download my CV to view a detailed summary of my experience, skills,
+          and accomplishments.
+        </p>
+        <a href="cv.pdf" class="cv-button" target="_blank"
+          >Download CV</a
+        >
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="box">
+        <h3>Portfolio Website</h3>
+        <p>A responsive portfolio site built using HTML, CSS, and JavaScript.</p>
+      </div>
+      <div class="box">
+        <h3>Dairy Shop Management System</h3>
+        <p>A website for shop management system built using PHP,SQL.</p>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="box">
+        <h3>Bachelor Of Computer Appliction</h3>
+        <p>SSPU university — 2023-2025</p>
+      </div>
+      <div class="box">
+        <h3>Pursuing Master of Computer Application</h3>
+        <p>
+          Sanjivani university — 2025-2026
+        </p>
+      </div>
+    </section>
+
+    <section id="certification">
+      <h2>Certification</h2>
+      <div class="box">
+        <h3>Python certification</h3>
+        <p>Sololearn,2022</p>
+      </div>
+     
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="box">
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i> tejasshelke3456@gmail.com
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i> +91 7499814102
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-linkedin"></i>
+            <a href="https://www.linkedin.com/in/tejas-shelke-51117726a" target="_blank"
+              >linkedin.com/in/tejas-shelke</a
+            >
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/tejas419/porfolio" target="_blank"
+              >github.com/tejas419/porfolio</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Shelke Tejas. All rights reserved.</p>
+  </footer>
+
+  <!-- Particles.js Script -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 50, density: { enable: true, value_area: 800 } },
+        color: { value: '#3498db' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.5, random: false },
+        size: { value: 3, random: true },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: '#3498db',
+          opacity: 0.4,
+          width: 1,
+        },
+        move: {
+          enable: true,
+          speed: 3,
+          direction: 'none',
+          random: false,
+          straight: false,
+          out_mode: 'out',
+        },
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: {
+          onhover: { enable: true, mode: 'grab' },
+          onclick: { enable: true, mode: 'push' },
+          resize: true,
+        },
+        modes: {
+          grab: { distance: 140, line_linked: { opacity: 1 } },
+          push: { particles_nb: 4 },
+        },
+      },
+      retina_detect: true,
+    });
+  </script>
+</body>
+</html>
